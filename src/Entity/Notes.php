@@ -2,7 +2,8 @@
 
 namespace App\Entity;
 
-//use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraint as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\NotesRepository")
@@ -32,7 +33,7 @@ class Notes
     private $status;
 
     /**
-     * @ORM\Column(type="datetime")
+      * @ORM\Column(type="datetime")
      */
     private $created;
 
@@ -89,3 +90,10 @@ class Notes
         return $this;
     }
 }
+    //* @Assert\NotBlank()
+    //* @Assert\Lenght(
+    //*     "min"=>4,
+    //*     "max"=>51,
+    //*     "minMessage"=>" {{value}} not enough {{limit}}",
+    //*     "maxMessage"=>"a bit too much",
+    //* )

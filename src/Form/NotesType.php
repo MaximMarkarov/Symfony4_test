@@ -17,7 +17,9 @@
         public function buildForm(FormBuilderInterface $builder, array $options)
         {
             $builder
-                ->add('title', TextType::class)
+                ->add('title', TextType::class, [
+                    'required'=>false
+                ])
                 ->add('description', TextareaType::class)
                 ->add('status', ChoiceType::class,
                     ['choices'=>[
